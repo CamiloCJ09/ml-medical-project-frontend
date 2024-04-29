@@ -1,0 +1,23 @@
+.home-text {
+  text-align: justify;
+  padding: 20px;
+  line-height: 1.5;
+  font-size: 1rem;
+  color: #333;
+}
+.home-text h2 {
+  color: #007bff;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  text-align: center;
+}
+.home-text h3 {
+  color: #007bff;
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  text-align: center;
+}
+.home-text p {
+  margin-bottom: 20px;
+  color: #333;
+}

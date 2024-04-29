@@ -1,13 +1,15 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
+import { Button } from "reactstrap";
+import "./ModelPage.css";
 
 function ModelPage() {
   // State variables to store the selected values
-  const [field1, setField1] = useState('');
-  const [field2, setField2] = useState('');
-  const [field3, setField3] = useState('');
+  const [field1, setField1] = useState("");
+  const [field2, setField2] = useState("");
+  const [field3, setField3] = useState("");
 
   // Function to handle form submission
-  const handleSubmit = (e: { preventDefault: () => void; }) => {
+  const handleSubmit = (e: { preventDefault: () => void }) => {
     e.preventDefault(); // Prevent default form submission behavior
     // You can handle the form submission logic here
     console.log("Field 1:", field1);
@@ -16,11 +18,11 @@ function ModelPage() {
   };
 
   return (
-    <div>
+    <div className="model-page">
       <h2>Model Page</h2>
       <form onSubmit={handleSubmit}>
         <label>
-          Field 1:
+          Hinselmann_0:
           <select value={field1} onChange={(e) => setField1(e.target.value)}>
             <option value="">Select</option>
             <option value="true">True</option>
@@ -29,7 +31,7 @@ function ModelPage() {
         </label>
         <br />
         <label>
-          Field 2:
+          Citology_0:
           <select value={field2} onChange={(e) => setField2(e.target.value)}>
             <option value="">Select</option>
             <option value="true">True</option>
@@ -38,7 +40,7 @@ function ModelPage() {
         </label>
         <br />
         <label>
-          Field 3:
+          Schiller_0:
           <select value={field3} onChange={(e) => setField3(e.target.value)}>
             <option value="">Select</option>
             <option value="true">True</option>
@@ -46,7 +48,11 @@ function ModelPage() {
           </select>
         </label>
         <br />
-        <button type="submit">Submit</button>
+        <div>
+          <Button type="submit" color="primary">
+            Get results
+          </Button>
+        </div>
       </form>
     </div>
   );
