@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-import { Button } from "reactstrap";
+import { useState } from "react";
 import "./ModelPage.css";
 
 function ModelPage() {
@@ -19,10 +18,11 @@ function ModelPage() {
 
   return (
     <div className="model-page">
-      <h2>Model Page</h2>
-      <form onSubmit={handleSubmit}>
-        <label>
-          Hinselmann_0:
+      <h3 className="title">Model Page</h3>
+      <form onSubmit={handleSubmit} className="model-page-form">
+        <label className="model-page-label">
+          <div className="model-page-title">Hinselmann_0:</div>
+
           <select value={field1} onChange={(e) => setField1(e.target.value)}>
             <option value="">Select</option>
             <option value="true">True</option>
@@ -30,8 +30,8 @@ function ModelPage() {
           </select>
         </label>
         <br />
-        <label>
-          Citology_0:
+        <label className="model-page-label">
+          <div className="model-page-title">Citology_0:</div>
           <select value={field2} onChange={(e) => setField2(e.target.value)}>
             <option value="">Select</option>
             <option value="true">True</option>
@@ -39,8 +39,8 @@ function ModelPage() {
           </select>
         </label>
         <br />
-        <label>
-          Schiller_0:
+        <label className="model-page-label">
+          <div className="model-page-title">Schiller_0:</div>
           <select value={field3} onChange={(e) => setField3(e.target.value)}>
             <option value="">Select</option>
             <option value="true">True</option>
@@ -49,11 +49,14 @@ function ModelPage() {
         </label>
         <br />
         <div>
-          <Button type="submit" color="primary">
+          <button className="model-page-button" type="submit" color="primary">
             Get results
-          </Button>
+          </button>
         </div>
       </form>
+      <div className="box-results">
+        La probabilidad de tener cancer es de ....
+      </div>
     </div>
   );
 }
