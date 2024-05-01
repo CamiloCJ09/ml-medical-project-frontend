@@ -13,7 +13,6 @@ function nav() {
           <Link to="/use">Use</Link>
           <Link to="/info">let's talk</Link>
         </nav>
-        <div className="logo">Logo</div>
       </div>
       <div className="main">
         <Routes>
