@@ -43,7 +43,7 @@ function Info() {
           }
         );
         // const assistantId = process.env.ASSISTANT_ID?.toString() || "";
-        const assistantId = "AGREGAR ACA EL ID"?.toString() || "";
+        const assistantId = "PONER ID DE ASISTENTE"?.toString() || "";
         const myRun = await openai.beta.threads.runs.create(threadId, {
           assistant_id: assistantId,
         });

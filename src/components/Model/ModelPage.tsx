@@ -1,11 +1,13 @@
 import { useState } from "react";
 import "./ModelPage.css";
+import { sendDataPredict } from "../../service/conection";
 
 function ModelPage() {
   // State variables to store the selected values
   const [field1, setField1] = useState("");
   const [field2, setField2] = useState("");
   const [field3, setField3] = useState("");
+  const [message, setMessage] = useState("");
 
   // Function to handle form submission
   const handleSubmit = (e: { preventDefault: () => void }) => {
@@ -14,6 +16,22 @@ function ModelPage() {
     console.log("Field 1:", field1);
     console.log("Field 2:", field2);
     console.log("Field 3:", field3);
+  };
+  const objStates = [
+    { Hinselmann: field1, Citology: field2, Schiller: field3 },
+  ];
+  const handlePredict = () => {
+    const response = sendDataPredict(objStates);
+
+    if (response.result) {
+      setMessage(
+        `You are predicted to have a high chance of having cancer, with an accuracy of: ${response.accuracy}`
+      );
+    } else {
+      setMessage(
+        `You are predicted to have a low chance of having cancer, with an accuracy of: ${response.accuracy}`
+      );
+    }
   };
 
   return (
@@ -49,13 +67,18 @@ function ModelPage() {
         </label>
         <br />
         <div>
-          <button className="model-page-button" type="submit" color="primary">
+          <button
+            className="model-page-button"
+            type="submit"
+            color="primary"
+            onClick={() => handlePredict()}
+          >
             Get results
           </button>
         </div>
       </form>
       <div className="box-results">
-        La probabilidad de tener cancer es de ....
+        <p>{message}</p>
       </div>
     </div>
   );
