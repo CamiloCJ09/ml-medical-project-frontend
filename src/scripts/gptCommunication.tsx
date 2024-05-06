@@ -3,7 +3,7 @@ import OpenAI from "openai";
 // dotenv.config();
 
 const openai = new OpenAI({
-  apiKey: "poner toquen de api",
+  apiKey: "PONER ACA APIKEY DE OPENAI",
   dangerouslyAllowBrowser: true,
 });
 
