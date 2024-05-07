@@ -35,11 +35,12 @@ function ModelPage() {
   };
 
   return (
+    <div className="model">
     <div className="model-page">
       <h3 className="title">Model Page</h3>
       <form onSubmit={handleSubmit} className="model-page-form">
         <label className="model-page-label">
-          <div className="model-page-title">Hinselmann_0:</div>
+          <div className="model-page-title">Hinselmann:</div>
 
           <select value={field1} onChange={(e) => setField1(e.target.value)}>
             <option value="">Select</option>
@@ -49,7 +50,7 @@ function ModelPage() {
         </label>
         <br />
         <label className="model-page-label">
-          <div className="model-page-title">Citology_0:</div>
+          <div className="model-page-title">Citology:</div>
           <select value={field2} onChange={(e) => setField2(e.target.value)}>
             <option value="">Select</option>
             <option value="true">True</option>
@@ -58,7 +59,7 @@ function ModelPage() {
         </label>
         <br />
         <label className="model-page-label">
-          <div className="model-page-title">Schiller_0:</div>
+          <div className="model-page-title">Schiller:</div>
           <select value={field3} onChange={(e) => setField3(e.target.value)}>
             <option value="">Select</option>
             <option value="true">True</option>
@@ -80,6 +81,7 @@ function ModelPage() {
       <div className="box-results">
         <p>{message}</p>
       </div>
+    </div>
     </div>
   );
 }
